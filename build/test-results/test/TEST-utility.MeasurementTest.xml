@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="utility.MeasurementTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-17T11:09:37" hostname="DESKTOP-AB0UK2U" time="0.057">
+<testsuite name="utility.MeasurementTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-17T11:23:33" hostname="DESKTOP-AB0UK2U" time="0.029">
   <properties/>
-  <testcase name="testEqualsIsTrueFor100GramsEqalsOneTenthKilogram()" classname="utility.MeasurementTest" time="0.057"/>
+  <testcase name="testSubtractIs1KilogramForRemoving500GramsFromOneAndAHalfKilogram()" classname="utility.MeasurementTest" time="0.029"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

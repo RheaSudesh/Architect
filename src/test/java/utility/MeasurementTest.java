@@ -219,7 +219,7 @@ public class MeasurementTest {
 
     @Test
     public void testEqualsIsTrueForOneTenthKilogramEquals100Gram() throws InvalidMeasurementException {
-        double oneTenthOfkilogramWeight = 0.1;
+        double oneTenthOfkilogramWeight=0.1;
         double hundredGramWeight = 100;
         Measurement measurementInKilogram = new Measurement(oneTenthOfkilogramWeight, Unit.Kilogram);
         Measurement measurementInGram = new Measurement(hundredGramWeight, Unit.Gram);
@@ -231,7 +231,7 @@ public class MeasurementTest {
 
     @Test
     public void testEqualsIsTrueFor100GramsEqalsOneTenthKilogram() throws InvalidMeasurementException {
-        double oneTenthOfkilogramWeight = 0.1;
+        double oneTenthOfkilogramWeight=0.1;
         double hundredGramWeight = 100;
         Measurement measurementInKilogram = new Measurement(oneTenthOfkilogramWeight, Unit.Kilogram);
         Measurement measurementInGram = new Measurement(hundredGramWeight, Unit.Gram);
@@ -241,4 +241,29 @@ public class MeasurementTest {
         assertTrue(actual);
     }
 
+    @Test
+    public void testAddIs1010GramFor10GramAnd1Kilogram() throws InvalidMeasurementException {
+        double onekilogramWeight=1;
+        double tenGramWeight = 10;
+        Measurement measurementInKilogram = new Measurement(onekilogramWeight, Unit.Kilogram);
+        Measurement measurementInGram = new Measurement(tenGramWeight, Unit.Gram);
+        Measurement expectedSum = new Measurement(1010, Unit.Gram);
+
+        Measurement actualSum = measurementInKilogram.add(measurementInGram);
+
+        assertEquals(expectedSum, actualSum);
+    }
+
+    @Test
+    public void testSubtractIs1KilogramForRemoving500GramsFromOneAndAHalfKilogram() throws InvalidMeasurementException {
+        double oneAndAHalfkilogramWeight=1.5;
+        double fiveHundredGramWeight = 500;
+        Measurement measurementInKilogram = new Measurement(oneAndAHalfkilogramWeight, Unit.Kilogram);
+        Measurement measurementInGram = new Measurement(fiveHundredGramWeight, Unit.Gram);
+        Measurement expectedDifference = new Measurement(1, Unit.Kilogram);
+
+        Measurement actualDifference = measurementInKilogram.subtract(measurementInGram);
+
+        assertEquals(expectedDifference, actualDifference);
+    }
 }
