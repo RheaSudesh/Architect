@@ -3,7 +3,7 @@ package utility;
 public class Measurement {
 
     private final double dimension;
-    private final Unit unit;
+    public final Unit unit;
 
     public Measurement(double dimension, Unit unit) throws InvalidMeasurementException {
         if (dimension <= 0)
@@ -22,21 +22,19 @@ public class Measurement {
     }
 
 
-    public Measurement add(Measurement measurement, Unit unit) throws InvalidMeasurementException {
+    public Measurement add(Measurement measurement) throws InvalidMeasurementException {
         double sum = this.unit.dimensionInMeter(dimension) + measurement.unit.dimensionInMeter(measurement.dimension);
-        double sumInSpecifiedUnit = unit.givenDimensionInMeterConvertToSpecificUnit(sum);
 
-        return new Measurement(sumInSpecifiedUnit, unit);
+        return new Measurement(sum, Unit.Meter);
     }
 
 
-    public Measurement subtract(Measurement measurement, Unit unit) {
+    public Measurement subtract(Measurement measurement) {
 
         double difference = this.unit.dimensionInMeter(dimension) - measurement.unit.dimensionInMeter(measurement.dimension);
-        double differenceInSpecifiedUnit = unit.givenDimensionInMeterConvertToSpecificUnit(difference);
 
         try {
-            return new Measurement(differenceInSpecifiedUnit, unit);
+            return new Measurement(difference, Unit.Meter);
         } catch (InvalidMeasurementException e) {
             throw new IllegalArgumentException("Cannot Subtract larger dimension from smaller dimension");
         }

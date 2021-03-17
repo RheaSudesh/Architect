@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
 public class MeasurementTest {
 
     @Test
@@ -121,8 +120,7 @@ public class MeasurementTest {
         Measurement measurementInMeter = new Measurement(dimensionInMeter, Unit.Meter);
         Measurement expected = new Measurement(2, Unit.Meter);
 
-        Measurement actual = measurementInMeter.add(measurementInCentimeter, Unit.Meter);
-
+        Measurement actual = measurementInMeter.add(measurementInCentimeter);
         assertEquals(expected, actual);
     }
 
@@ -134,7 +132,7 @@ public class MeasurementTest {
         Measurement measurementInKilometer = new Measurement(dimensionInKilometer, Unit.Kilometer);
         Measurement expected = new Measurement(100200, Unit.Centimeter);
 
-        Measurement actual = measurementInKilometer.add(measurementInCentimeter, Unit.Centimeter);
+        Measurement actual = measurementInKilometer.add(measurementInCentimeter);
 
         assertEquals(expected, actual);
     }
@@ -147,7 +145,7 @@ public class MeasurementTest {
         Measurement measurementInMeter = new Measurement(dimensionInMeter, Unit.Meter);
         Measurement expected = new Measurement(2, Unit.Kilometer);
 
-        Measurement actual = measurementInMeter.add(measurementInCentimeter, Unit.Kilometer);
+        Measurement actual = measurementInMeter.add(measurementInCentimeter);
 
         assertEquals(expected, actual);
     }
@@ -160,7 +158,7 @@ public class MeasurementTest {
         Measurement measurementInMeter = new Measurement(dimensionInMeter, Unit.Meter);
         Measurement expected = new Measurement(0.5, Unit.Meter);
 
-        Measurement actual = measurementInMeter.subtract(measurementInCentimeter, Unit.Meter);
+        Measurement actual = measurementInMeter.subtract(measurementInCentimeter);
 
         assertEquals(expected, actual);
     }
@@ -173,7 +171,7 @@ public class MeasurementTest {
         Measurement measurementInMeter = new Measurement(dimensionInMeter, Unit.Meter);
         Measurement expected = new Measurement(1900, Unit.Centimeter);
 
-        Measurement actual = measurementInCentimeter.subtract(measurementInMeter, Unit.Centimeter);
+        Measurement actual = measurementInCentimeter.subtract(measurementInMeter);
 
         assertEquals(expected, actual);
     }
@@ -185,7 +183,7 @@ public class MeasurementTest {
         Measurement measurementInCentimeter = new Measurement(dimensionInCentimeter, Unit.Centimeter);
         Measurement measurementInMeter = new Measurement(dimensionInMeter, Unit.Meter);
 
-        assertThrows(IllegalArgumentException.class, () -> measurementInCentimeter.subtract(measurementInMeter, Unit.Meter));
+        assertThrows(IllegalArgumentException.class, () -> measurementInCentimeter.subtract(measurementInMeter));
     }
 
     @Test
@@ -193,8 +191,30 @@ public class MeasurementTest {
         double dimensionInMeter = 1;
         Measurement measurementInMeter = new Measurement(dimensionInMeter, Unit.Meter);
 
-        assertThrows(IllegalArgumentException.class, () -> measurementInMeter.subtract(measurementInMeter, Unit.Meter));
+        assertThrows(IllegalArgumentException.class, () -> measurementInMeter.subtract(measurementInMeter));
     }
 
+    @Test
+    public void testEqualsIsTrueFor1GramEquals1Gram() throws InvalidMeasurementException {
+        double weightInGram = 1;
+        Measurement firstMeasurement = new Measurement(weightInGram, Unit.Gram);
+        Measurement secondMeasurement = new Measurement(weightInGram, Unit.Gram);
+
+        boolean actual = firstMeasurement.equals(secondMeasurement);
+
+        assertTrue(actual);
+    }
+
+    @Test
+    public void testEqualsIsFalseFor2GramsEquals1Gram() throws InvalidMeasurementException {
+        double twoGramWeight = 2;
+        double oneGramWeight = 1;
+        Measurement firstMeasurement = new Measurement(twoGramWeight, Unit.Gram);
+        Measurement secondMeasurement = new Measurement(oneGramWeight, Unit.Gram);
+
+        boolean actual = firstMeasurement.equals(secondMeasurement);
+
+        assertFalse(actual);
+    }
 
 }
