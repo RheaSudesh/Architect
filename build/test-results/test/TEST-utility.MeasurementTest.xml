@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="utility.MeasurementTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2021-03-17T10:55:06" hostname="DESKTOP-AB0UK2U" time="0.1">
+<testsuite name="utility.MeasurementTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-17T11:09:37" hostname="DESKTOP-AB0UK2U" time="0.057">
   <properties/>
-  <testcase name="testEqualsIsFalseFor2CentimeterEquals1Centimeter()" classname="utility.MeasurementTest" time="0.042"/>
-  <testcase name="testThrowsExceptionForZeroValuedDimension()" classname="utility.MeasurementTest" time="0.007"/>
-  <testcase name="testEqualsIsFalseFor2GramsEquals1Gram()" classname="utility.MeasurementTest" time="0.001"/>
-  <testcase name="testSubtractIsHalfMeterForRemoving50CentimeterFrom1Meter()" classname="utility.MeasurementTest" time="0.005"/>
-  <testcase name="testAddIs2KilometerFor100000CentimeterAnd1000Meter()" classname="utility.MeasurementTest" time="0.002"/>
-  <testcase name="testEqualsIsTrueFor1CentimeterEquals1Centimeter()" classname="utility.MeasurementTest" time="0.003"/>
-  <testcase name="testSubtractThrowsExceptionForRemoving1MeterFrom50Centimeter()" classname="utility.MeasurementTest" time="0.002"/>
-  <testcase name="testThrowsExceptionForNegativeValuedDimension()" classname="utility.MeasurementTest" time="0.002"/>
-  <testcase name="testEqualsIsTrueForOneThousandthKilometerEquals100Centimeter()" classname="utility.MeasurementTest" time="0.001"/>
-  <testcase name="testEqualsIsTrueForSameMeasurementInstance()" classname="utility.MeasurementTest" time="0.001"/>
-  <testcase name="testAddIs2MeterFor1MeterAnd100Centimeter()" classname="utility.MeasurementTest" time="0.001"/>
-  <testcase name="testEqualsIsTrueFor100CentimeterEqualsOneThousandthKilometer()" classname="utility.MeasurementTest" time="0.001"/>
-  <testcase name="testEqualsIsTrueFor100CentimeterEquals1Meter()" classname="utility.MeasurementTest" time="0.001"/>
-  <testcase name="testEqualsIsTrueFor1GramEquals1Gram()" classname="utility.MeasurementTest" time="0.001"/>
-  <testcase name="testEqualsIsFalseForNonMeasurementInstance()" classname="utility.MeasurementTest" time="0.002"/>
-  <testcase name="testSubtractIs1900CentimeterForRemoving1MeterFrom2000Centimeter()" classname="utility.MeasurementTest" time="0.001"/>
-  <testcase name="testAddIs100200CentimeterFor200CentimeterAnd1Kilometer()" classname="utility.MeasurementTest" time="0.001"/>
-  <testcase name="testSubtractThrowsExceptionForRemoving1MeterFrom1Meter()" classname="utility.MeasurementTest" time="0.003"/>
-  <testcase name="testEqualsIsTrueFor1MeterEquals100Centimeter()" classname="utility.MeasurementTest" time="0.001"/>
+  <testcase name="testEqualsIsTrueFor100GramsEqalsOneTenthKilogram()" classname="utility.MeasurementTest" time="0.057"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

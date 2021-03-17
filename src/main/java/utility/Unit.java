@@ -4,7 +4,8 @@ public enum Unit {
     Centimeter("centimeter"),
     Meter("meter"),
     Kilometer("kilometer"),
-    Gram("gram");
+    Gram("gram"),
+    Kilogram("kilogram");
 
     private final String name;
 
@@ -17,12 +18,14 @@ public enum Unit {
     }
 
     public double dimensionInMeter(double dimensionValue) {
-        if (this.name.equalsIgnoreCase("centimeter"))
+        if (name.equalsIgnoreCase("centimeter"))
             return dimensionValue / 100;
-        else if (this.name.equalsIgnoreCase("kilometer"))
+        else if (name.equalsIgnoreCase("kilometer"))
             return dimensionValue * 1000;
-        else if (this.name.equalsIgnoreCase(("gram")))  // 1 meter = 100000gram
+        else if (name.equalsIgnoreCase("gram"))  // 0.001 meter = 1000gram  =1kg
             return dimensionValue / 1000000;
+        else if (name.equalsIgnoreCase("kilogram"))
+            return dimensionValue / 1000;
         else
             return dimensionValue;
     }

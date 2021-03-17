@@ -217,4 +217,28 @@ public class MeasurementTest {
         assertFalse(actual);
     }
 
+    @Test
+    public void testEqualsIsTrueForOneTenthKilogramEquals100Gram() throws InvalidMeasurementException {
+        double oneTenthOfkilogramWeight = 0.1;
+        double hundredGramWeight = 100;
+        Measurement measurementInKilogram = new Measurement(oneTenthOfkilogramWeight, Unit.Kilogram);
+        Measurement measurementInGram = new Measurement(hundredGramWeight, Unit.Gram);
+
+        boolean actual = measurementInKilogram.equals(measurementInGram);
+
+        assertTrue(actual);
+    }
+
+    @Test
+    public void testEqualsIsTrueFor100GramsEqalsOneTenthKilogram() throws InvalidMeasurementException {
+        double oneTenthOfkilogramWeight = 0.1;
+        double hundredGramWeight = 100;
+        Measurement measurementInKilogram = new Measurement(oneTenthOfkilogramWeight, Unit.Kilogram);
+        Measurement measurementInGram = new Measurement(hundredGramWeight, Unit.Gram);
+
+        boolean actual = measurementInGram.equals(measurementInKilogram);
+
+        assertTrue(actual);
+    }
+
 }
