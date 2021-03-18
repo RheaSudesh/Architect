@@ -16,22 +16,20 @@ public class Measurement {
     public boolean equals(Object object) {
         if (this == object) return true;
         if (!(object instanceof Measurement)) return false;
-
         Measurement measurement = (Measurement) object;
-        return this.unit.dimensionInMeter(dimension) == measurement.unit.dimensionInMeter(measurement.dimension);
+
+        return this.unit.dimensionInSpecificUnits(dimension) == measurement.unit.dimensionInSpecificUnits(measurement.dimension);
     }
 
-
     public Measurement add(Measurement measurement) throws InvalidMeasurementException {
-        double sum = this.unit.dimensionInMeter(dimension) + measurement.unit.dimensionInMeter(measurement.dimension);
+        double sum = this.unit.dimensionInSpecificUnits(dimension) + measurement.unit.dimensionInSpecificUnits(measurement.dimension);
 
         return new Measurement(sum, Unit.Meter);
     }
 
 
     public Measurement subtract(Measurement measurement) {
-
-        double difference = this.unit.dimensionInMeter(dimension) - measurement.unit.dimensionInMeter(measurement.dimension);
+        double difference=this.unit.dimensionInSpecificUnits(dimension) - measurement.unit.dimensionInSpecificUnits(measurement.dimension);
 
         try {
             return new Measurement(difference, Unit.Meter);

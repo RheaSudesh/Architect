@@ -230,7 +230,7 @@ public class MeasurementTest {
     }
 
     @Test
-    public void testEqualsIsTrueFor100GramsEqalsOneTenthKilogram() throws InvalidMeasurementException {
+    public void testEqualsIsTrueFor100GramsEqualsOneTenthKilogram() throws InvalidMeasurementException {
         double oneTenthOfkilogramWeight=0.1;
         double hundredGramWeight = 100;
         Measurement measurementInKilogram = new Measurement(oneTenthOfkilogramWeight, Unit.Kilogram);
